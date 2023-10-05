@@ -12,6 +12,9 @@ defmodule Cards do
       :world
 
   """
+  @doc """
+    Creates deck
+  """
   def create_deck do
     values = ["Ace", "Two", "Three", "Four", "Five"]
     suits = ["Spades", "Clubs", "Hearts", "Diamond"]
@@ -29,6 +32,9 @@ defmodule Cards do
     Enum.member?(deck, hand)
   end
 
+  @doc """
+    Creates deck
+  """
   def deal(deck, hand_size) do
     { dealt, _ } = Enum.split(deck,hand_size)
     dealt
@@ -46,6 +52,7 @@ defmodule Cards do
     end
   end
 
+  @spec create_hand(integer) :: list
   def create_hand(hand_size) do
     Cards.create_deck
     |> Cards.shuffle
